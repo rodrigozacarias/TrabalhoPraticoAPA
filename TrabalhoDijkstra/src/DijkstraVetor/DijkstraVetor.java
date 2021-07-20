@@ -6,7 +6,6 @@ public class DijkstraVetor {
 	
 	private Grafo grafo;
 	private double p[];
-	private int pai[];//armazena nó pai
 	
 	public DijkstraVetor (Grafo grafo) {
 		this.grafo = grafo;
@@ -16,16 +15,13 @@ public class DijkstraVetor {
 			
 		int n = this.grafo.numVertices();
 		this.p = new double[n]; // peso dos vértices
-		this.pai = new int[n];
 		
         boolean visitados[] = new boolean[n];
 
         for (int i = 0; i < n; i++) {
             p[i] = Double.MAX_VALUE;
-            pai[i] = -1;
             visitados[i]=false;
         }
-        pai[raiz] = raiz;
         p[raiz] = 0;
 
         for (int i = 0; i < n ; i++) {
@@ -63,7 +59,7 @@ public class DijkstraVetor {
 	public void imprimeCaminhoCompleto() {
 		
 		System.out.println("---------------------");
-		System.out.println("Algorirmo Dijkstra implementado com Vetor");
+		System.out.println("Algoritmo Dijkstra implementado com Vetor");
 		for(int i=0; i< this.p.length; i++) {
 			System.out.println("d["+ i +"] = "+ p[i]);
 		}

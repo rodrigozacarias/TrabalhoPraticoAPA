@@ -76,7 +76,7 @@ public class DijkstraHeap {
 	public void imprimeCaminhoCompleto() {
 		
 		System.out.println("---------------------");
-		System.out.println("Algorirmo Dijkstra implementado com Heap");
+		System.out.println("Algoritmo Dijkstra implementado com Heap");
 		for(int i=0; i< this.p.length; i++) {
 			System.out.println("d["+ i +"] = "+ p[i]);
 		}
