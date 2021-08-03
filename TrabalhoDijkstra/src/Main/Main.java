@@ -68,34 +68,24 @@ public class Main {
 	private static String DMXAfile13 = "C:\\Users\\alralves\\Google Drive\\UNIRIO\\AULAS\\APA - Análise e Projeto de Algoritmos (APA)\\TRABALHO APA 01\\APA_TRABALHO_PRÁTICO\\INSTANCIAS\\DMXA\\dmxa1801.stp";
 	
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub		
 		
+		Arquivo arquivo = new Arquivo(DMXAfile13);		
+		arquivo.ler();
+			
+		DijkstraVetor dijkstraVetor = new DijkstraVetor();
 		
-		Arquivo arquivo = new Arquivo(test_set1file10);		
-		arquivo.lerTestSet();
-		
-		
-		//Arquivo arquivo = new Arquivo(test_set2file10);		
-		//arquivo.lerTestSet();
-		
-		
-		//Arquivo arquivo = new Arquivo(DMXAfile13);
-		
-		//arquivo.ler();
-		
-		DijkstraVetor dijkstraVetor = new DijkstraVetor(arquivo.getGrafo());
-		
-		long inicioVetor = System.currentTimeMillis();
-		dijkstraVetor.calculaMenorCaminho(0);
+		long inicioVetor = System.currentTimeMillis();		
+		dijkstraVetor.dijkstra(arquivo.getGrafo(),0);
 		long fimVetor = System.currentTimeMillis();
 		long totalVetor = fimVetor - inicioVetor;
 		
 		System.out.println("O tempo total de processamento dos VETORES para este algoritmo foi de " + totalVetor + "ms.");
 		
+		Grafo grafo = arquivo.getGrafo();		
 		DijkstraHeap dijkstraHeap = new DijkstraHeap(arquivo.getGrafo());
-
 		long inicioHeap = System.currentTimeMillis();
-		dijkstraHeap.obterArvoreCMC(0);
+		dijkstraHeap.Dijkstra(grafo, 0);
 		long fimHeap = System.currentTimeMillis();
 		long totalHeap = fimHeap - inicioHeap;
 	

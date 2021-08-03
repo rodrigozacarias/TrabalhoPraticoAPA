@@ -3,7 +3,9 @@ package DijkstraHeapBinario;
 public class FPHeapMin {
 	
 		private double p[];
-		private int n, pos[] , fp[];
+		int n;
+		private int pos[];
+		private int fp[];
 		
 		public FPHeapMin (double p[] , int v[] ) {
 			this.p = p;
@@ -69,7 +71,7 @@ public class FPHeapMin {
 			this.pos[x] = i ;
 		}
 		
-		boolean vazio( ) { 
+		public boolean vazio( ) { 
 			return this.n == 0;
 		}
 

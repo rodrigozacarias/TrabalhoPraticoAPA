@@ -21,18 +21,20 @@ public class DijkstraHeap {
 		this.grafo = grafo;
 	}
 	
-	public void obterArvoreCMC (int raiz) throws Exception {
+	public void Dijkstra(Grafo grafo, int s) throws Exception {		
+		
 		int n = this.grafo.numVertices();
 		this.p = new double[n] ; // peso dos vértices
-		int vs[] = new int [n+1]; // vértices
+		int vs[] = new int [n+1]; // vértices		
 		this.antecessor = new int [n] ;
+		
 		for (int u = 0; u < n; u ++) {
 			this.antecessor[u] = -1;
 			p[u] = Double.MAX_VALUE ; // ∞
 			vs[u+1] = u; // Heap indireto a ser construído
 		}
-		p[raiz] = 0;
 		
+		p[s] = 0;
 		
 		heap = new FPHeapMin(p, vs);
 		heap.constroi();
